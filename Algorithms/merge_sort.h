@@ -6,7 +6,7 @@ namespace algorithms
 	template <typename T>
 	void merge_sort(list<T>& items)
 	{
-		merge_sort(items, 0, items.count() - 1);
+		merge_sort(items, 0, items.size() - 1);
 	}
 
 	template <typename T>

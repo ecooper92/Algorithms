@@ -6,7 +6,7 @@ namespace algorithms
 	template <typename T>
 	void quick_sort(list<T>& items)
 	{
-		quick_sort(items, 0, items.count() - 1);
+		quick_sort(items, 0, items.size() - 1);
 	}
 
 	template <typename T>

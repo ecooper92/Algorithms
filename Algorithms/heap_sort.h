@@ -8,7 +8,7 @@ namespace algorithms
 	void heap_sort(list<T>& items)
 	{
 		binary_heap bh(items);
-		for (int i = 0; i < items.count(); i++)
+		for (int i = 0; i < items.size(); i++)
 		{
 			items[i] = bh.remove();
 		}

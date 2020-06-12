@@ -6,9 +6,9 @@ namespace algorithms
 	template <typename T>
 	void bubble_sort(list<T>& items)
 	{
-		for (int i = 0; i < items.count(); i++)
+		for (int i = 0; i < items.size(); i++)
 		{
-			for (int j = i + 1; j < items.count(); j++)
+			for (int j = i + 1; j < items.size(); j++)
 			{
 				if (items[i] > items[j])
 				{

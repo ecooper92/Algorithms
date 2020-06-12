@@ -26,12 +26,12 @@ namespace algorithms
 		{
 		}
 
-		list(T items[], int count) noexcept :
+		list(T items[], int size) noexcept :
 			_first_index(0),
-			_last_index(count - 1),
-			_size(count),
-			_dataSize(count),
-			_data(new T[count])
+			_last_index(size - 1),
+			_size(size),
+			_dataSize(size),
+			_data(new T[size])
 		{
 			std::copy(items, items + _size, _data);
 		}
@@ -100,7 +100,7 @@ namespace algorithms
 			return _data[(_first_index + index) % _dataSize];
 		}
 
-		inline void add(const T& item) noexcept
+		inline void push_back(const T& item) noexcept
 		{
 			if (_size >= _dataSize)
 			{
@@ -128,7 +128,7 @@ namespace algorithms
 			_data[index] = item;
 		}*/
 
-		inline T& remove() noexcept
+		inline T& pop_back() noexcept
 		{
 			if (_size > 0)
 			{
@@ -155,7 +155,7 @@ namespace algorithms
 			return item;
 		}*/
 
-		inline int count() const noexcept
+		inline int size() const noexcept
 		{
 			return _size;
 		}

@@ -18,17 +18,17 @@ namespace algorithms
 
 		inline void push(T& item)
 		{
-			_data.add(item);
+			_data.push_back(item);
 		}
 
 		inline T& pop()
 		{
-			return _data.remove();
+			return _data.pop_back();
 		}
 
-		inline int count() const
+		inline int size() const
 		{
-			return _data.count();
+			return _data.size();
 		}
 
 		inline T& bottom() const

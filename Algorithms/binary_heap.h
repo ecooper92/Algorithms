@@ -11,7 +11,7 @@ namespace algorithms
 		binary_heap(const list<T>& list) :
 			_tree(list)
 		{
-			for (int i = _tree.count() - 1; i >= 0; i--)
+			for (int i = _tree.size() - 1; i >= 0; i--)
 			{
 				heapify(i);
 			}
@@ -19,9 +19,9 @@ namespace algorithms
 
 		void insert(const T& item)
 		{
-			_tree.add(item);
+			_tree.push_back(item);
 
-			int index = _tree.count() - 1;
+			int index = _tree.size() - 1;
 			int lastIndex = -1;
 			while (index != lastIndex)
 			{
@@ -33,14 +33,14 @@ namespace algorithms
 
 		T& remove()
 		{
-			if (_tree.count() == 1)
+			if (_tree.size() == 1)
 			{
-				return _tree.remove();
+				return _tree.pop_back();
 			}
 			else
 			{
 				int first = _tree.first();
-				_tree[0] = _tree.remove();
+				_tree[0] = _tree.pop_back();
 
 				heapify(0);
 
@@ -50,7 +50,7 @@ namespace algorithms
 	private:
 		void heapify(int index)
 		{
-			if (index < 0 || index >= _tree.count())
+			if (index < 0 || index >= _tree.size())
 			{
 				return;
 			}
@@ -58,13 +58,13 @@ namespace algorithms
 			int smallestIndex = index;
 
 			int leftChildIndex = (index * 2) + 1;
-			if (leftChildIndex < _tree.count() && _tree[leftChildIndex] < _tree[smallestIndex])
+			if (leftChildIndex < _tree.size() && _tree[leftChildIndex] < _tree[smallestIndex])
 			{
 				smallestIndex = leftChildIndex;
 			}
 
 			int rightChildIndex = leftChildIndex + 1;
-			if (rightChildIndex < _tree.count() && _tree[rightChildIndex] < _tree[smallestIndex])
+			if (rightChildIndex < _tree.size() && _tree[rightChildIndex] < _tree[smallestIndex])
 			{
 				smallestIndex = rightChildIndex;
 			}

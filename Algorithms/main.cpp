@@ -13,7 +13,7 @@ using namespace algorithms;
 void print_list(list<int>& list)
 {
     std::cout << "[ ";
-    for (int i = 0; i < list.count(); i++)
+    for (int i = 0; i < list.size(); i++)
     {
         std::cout << list[i] << " ";
     }
