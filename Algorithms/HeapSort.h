@@ -1,16 +1,16 @@
 #pragma once
 #include "list.h"
-#include "BinaryHeap.h"
+#include "binary_heap.h"
 
 namespace Algorithms
 {
 	template <typename T>
 	void HeapSort(list<T>& items)
 	{
-		BinaryHeap bh(items);
-		for (int i = 0; i < items.Count(); i++)
+		binary_heap bh(items);
+		for (int i = 0; i < items.count(); i++)
 		{
-			items[i] = bh.Remove();
+			items[i] = bh.remove();
 		}
 	}
 }

@@ -4,20 +4,20 @@
 namespace Algorithms
 {
 	template <typename T>
-	class BinaryHeap
+	class binary_heap
 	{
 	public:
-		BinaryHeap() {}
-		BinaryHeap(list<T> list) :
+		binary_heap() {}
+		binary_heap(list<T> list) :
 			_tree(list)
 		{
-			for (int i = _tree.Count() - 1; i >= 0; i--)
+			for (int i = _tree.count() - 1; i >= 0; i--)
 			{
-				Heapify(i);
+				heapify(i);
 			}
 		}
 
-		void Insert(T item)
+		void insert(T item)
 		{
 			_tree.add(item);
 
@@ -27,30 +27,30 @@ namespace Algorithms
 			{
 				lastIndex = index;
 				index = (index - 1) / 2;
-				Heapify(index);
+				heapify(index);
 			}
 		}
 
-		int Remove()
+		int remove()
 		{
-			if (_tree.Count() == 1)
+			if (_tree.count() == 1)
 			{
 				return _tree.remove();
 			}
 			else
 			{
-				int first = _tree.First();
+				int first = _tree.first();
 				_tree[0] = _tree.remove();
 
-				Heapify(0);
+				heapify(0);
 
 				return first;
 			}
 		}
 	private:
-		void Heapify(int index)
+		void heapify(int index)
 		{
-			if (index < 0 || index >= _tree.Count())
+			if (index < 0 || index >= _tree.count())
 			{
 				return;
 			}
@@ -58,13 +58,13 @@ namespace Algorithms
 			int smallestIndex = index;
 
 			int leftChildIndex = (index * 2) + 1;
-			if (leftChildIndex < _tree.Count() && _tree[leftChildIndex] < _tree[smallestIndex])
+			if (leftChildIndex < _tree.count() && _tree[leftChildIndex] < _tree[smallestIndex])
 			{
 				smallestIndex = leftChildIndex;
 			}
 
 			int rightChildIndex = leftChildIndex + 1;
-			if (rightChildIndex < _tree.Count() && _tree[rightChildIndex] < _tree[smallestIndex])
+			if (rightChildIndex < _tree.count() && _tree[rightChildIndex] < _tree[smallestIndex])
 			{
 				smallestIndex = rightChildIndex;
 			}
@@ -72,7 +72,7 @@ namespace Algorithms
 			if (smallestIndex != index)
 			{
 				std::swap(_tree[smallestIndex], _tree[index]);
-				this->Heapify(smallestIndex);
+				this->heapify(smallestIndex);
 			}
 		}
 

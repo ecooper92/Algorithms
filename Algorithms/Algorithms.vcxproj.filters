@@ -35,13 +35,13 @@
     <ClInclude Include="QuickSort.h">
       <Filter>Header Files\Sort</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryHeap.h">
-      <Filter>Header Files\DataStructures</Filter>
-    </ClInclude>
     <ClInclude Include="HeapSort.h">
       <Filter>Header Files\Sort</Filter>
     </ClInclude>
     <ClInclude Include="list.h">
+      <Filter>Header Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="binary_heap.h">
       <Filter>Header Files\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>
