@@ -8,7 +8,7 @@ namespace algorithms
 	{
 	public:
 		binary_heap() {}
-		binary_heap(list<T> list) :
+		binary_heap(const list<T>& list) :
 			_tree(list)
 		{
 			for (int i = _tree.count() - 1; i >= 0; i--)
@@ -17,7 +17,7 @@ namespace algorithms
 			}
 		}
 
-		void insert(T& item)
+		void insert(const T& item)
 		{
 			_tree.add(item);
 

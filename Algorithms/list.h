@@ -1,4 +1,5 @@
 #pragma once
+#include <utility>
 #include <algorithm>
 
 namespace algorithms
@@ -84,7 +85,7 @@ namespace algorithms
 			return _data[index];
 		}
 
-		inline void add(T& item) noexcept
+		inline void add(const T& item) noexcept
 		{
 			if (_count >= _dataSize)
 			{
@@ -94,7 +95,7 @@ namespace algorithms
 			_data[_count++] = item;
 		}
 
-		inline void add(T& item, int index) noexcept
+		inline void add(const T& item, int index) noexcept
 		{
 			if (_count >= _dataSize)
 			{

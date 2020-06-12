@@ -1,6 +1,6 @@
 #pragma once
-#include <algorithm>
-#include "List.h"
+#include <utility>
+#include "list.h"
 
 namespace algorithms
 {
@@ -28,17 +28,17 @@ namespace algorithms
 
 		inline int count() const
 		{
-			return _count;
+			return _data.count();
 		}
 
 		inline T& bottom() const
 		{
-			return _data[0];
+			return _data.first();
 		}
 
 		inline T& top() const
 		{
-			return _data[_count - 1];
+			return _data.last();
 		}
 
 	private:
