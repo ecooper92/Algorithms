@@ -17,7 +17,7 @@ namespace algorithms
 			}
 		}
 
-		void insert(T item)
+		void insert(T& item)
 		{
 			_tree.add(item);
 
@@ -31,7 +31,7 @@ namespace algorithms
 			}
 		}
 
-		int remove()
+		T& remove()
 		{
 			if (_tree.count() == 1)
 			{

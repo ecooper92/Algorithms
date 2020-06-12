@@ -154,6 +154,7 @@
     <ClInclude Include="list.h" />
     <ClInclude Include="merge_sort.h" />
     <ClInclude Include="quick_sort.h" />
+    <ClInclude Include="stack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

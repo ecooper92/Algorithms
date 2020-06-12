@@ -7,21 +7,21 @@ namespace algorithms
 	class list
 	{
 	public:
-		list() :
+		list() noexcept :
 			_count(0),
 			_dataSize(16),
 			_data(new T[16]) 
 		{
 		}
 
-		explicit list(int reserveSize) :
+		explicit list(int reserveSize) noexcept :
 			_count(0),
 			_dataSize(reserveSize),
 			_data(new T[reserveSize]) 
 		{
 		}
 
-		list(T items[], int count) :
+		list(T items[], int count) noexcept :
 			_count(count),
 			_dataSize(count),
 			_data(new T[count])
@@ -29,7 +29,7 @@ namespace algorithms
 			std::copy(items, items + _count, _data);
 		}
 
-		list(std::initializer_list<T> list) :
+		list(std::initializer_list<T> list) noexcept :
 			_count(list.size()),
 			_dataSize(list.size()),
 			_data(new T[list.size()])
@@ -37,7 +37,7 @@ namespace algorithms
 			std::copy(list.begin(), list.end(), _data);
 		}
 
-		list(const list<T>& other) :
+		list(const list<T>& other) noexcept :
 			_count(other._count),
 			_dataSize(other._dataSize),
 			_data(new T[other._dataSize])
@@ -45,13 +45,7 @@ namespace algorithms
 			std::copy(other._data, other._data + other._dataSize, _data);
 		}
 
-		list<T>& operator=(const list<T>& other)
-		{
-			list<T>(other).swap(*this);
-			return *this;
-		}
-
-		list(list<T>&& other) :
+		list(list<T>&& other) noexcept :
 			_count(other._count),
 			_dataSize(other._dataSize),
 			_data(other._data)
@@ -61,13 +55,19 @@ namespace algorithms
 			other._data = NULL;
 		}
 
-		list<T>& operator=(list<T>&& other)
+		list<T>& operator=(const list<T>& other) noexcept
+		{
+			list<T>(other).swap(*this);
+			return *this;
+		}
+
+		list<T>& operator=(list<T>&& other) noexcept
 		{
 			list<T>(std::move(other)).swap(*this);
 			return *this;
 		}
 
-		~list()
+		~list() noexcept
 		{
 			if (_data)
 			{
@@ -79,12 +79,12 @@ namespace algorithms
 			_count = 0;
 		}
 
-		inline T& operator[](int index)
+		inline T& operator[](int index) noexcept
 		{
 			return _data[index];
 		}
 
-		inline void add(T item)
+		inline void add(T& item) noexcept
 		{
 			if (_count >= _dataSize)
 			{
@@ -94,28 +94,55 @@ namespace algorithms
 			_data[_count++] = item;
 		}
 
-		inline T remove()
+		inline void add(T& item, int index) noexcept
+		{
+			if (_count >= _dataSize)
+			{
+				this->increase_capacity();
+			}
+			
+			for (int i = count++; i > index; i--)
+			{
+				_data[i] = _data[i - 1];
+			}
+
+			_data[index] = item;
+		}
+
+		inline T& remove() noexcept
 		{
 			return _data[--_count];
 		}
 
-		inline int count() const
+		inline T& remove(int index) noexcept
+		{
+			T item = _data[index];
+			for (int i = index + 1; i < _count; i++)
+			{
+				_data[i - 1] = _data[i];
+			}
+
+			_count--;
+			return item;
+		}
+
+		inline int count() const noexcept
 		{
 			return _count;
 		}
 
-		inline T first() const
+		inline T& first() const noexcept
 		{
 			return _data[0];
 		}
 
-		inline T last() const
+		inline T& last() const noexcept
 		{
 			return _data[_count - 1];
 		}
 
 	private:
-		void increase_capacity()
+		void increase_capacity() noexcept
 		{
 			T* newData = new T[_dataSize * 2];
 			std::copy(_data, _data + _dataSize, newData);
