@@ -8,7 +8,7 @@
 #include "heap_sort.h"
 #include "list.h"
 
-using namespace Algorithms;
+using namespace algorithms;
 
 int main()
 {

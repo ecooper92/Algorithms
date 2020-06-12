@@ -2,7 +2,7 @@
 #include "list.h"
 #include "binary_heap.h"
 
-namespace Algorithms
+namespace algorithms
 {
 	template <typename T>
 	void heap_sort(list<T>& items)

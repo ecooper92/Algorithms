@@ -1,7 +1,7 @@
 #pragma once
 #include <algorithm>
 
-namespace Algorithms
+namespace algorithms
 {
 	template <typename T>
 	class list

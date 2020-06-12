@@ -1,7 +1,7 @@
 #pragma once
 #include "list.h"
 
-namespace Algorithms
+namespace algorithms
 {
 	template <typename T>
 	void quick_sort(list<T>& items)
