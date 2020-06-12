@@ -4,13 +4,13 @@
 namespace Algorithms
 {
 	template <typename T>
-	void MergeSort(List<T>& items)
+	void MergeSort(list<T>& items)
 	{
-		MergeSort(items, 0, items.Count() - 1);
+		MergeSort(items, 0, items.count() - 1);
 	}
 
 	template <typename T>
-	void MergeSort(List<T>& items, int startIndex, int endIndex)
+	void MergeSort(list<T>& items, int startIndex, int endIndex)
 	{
 		// Stop of there is one or fewer items between the indices.
 		if (endIndex <= startIndex)

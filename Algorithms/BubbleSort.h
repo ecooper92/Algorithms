@@ -4,11 +4,11 @@
 namespace Algorithms
 {
 	template <typename T>
-	void BubbleSort(List<T>& items)
+	void BubbleSort(list<T>& items)
 	{
-		for (int i = 0; i < items.Count(); i++)
+		for (int i = 0; i < items.count(); i++)
 		{
-			for (int j = i + 1; j < items.Count(); j++)
+			for (int j = i + 1; j < items.count(); j++)
 			{
 				if (items[i] > items[j])
 				{

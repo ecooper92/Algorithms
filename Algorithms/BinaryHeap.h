@@ -8,10 +8,10 @@ namespace Algorithms
 	{
 	public:
 		BinaryHeap() {}
-		BinaryHeap(List<T> list) :
+		BinaryHeap(list<T> list) :
 			_tree(list)
 		{
-			for (int i = _tree.Count() - 1; i >= 0; i--)
+			for (int i = _tree.count() - 1; i >= 0; i--)
 			{
 				Heapify(i);
 			}
@@ -19,9 +19,9 @@ namespace Algorithms
 
 		void Insert(T item)
 		{
-			_tree.Add(item);
+			_tree.add(item);
 
-			int index = _tree.Count() - 1;
+			int index = _tree.count() - 1;
 			int lastIndex = -1;
 			while (index != lastIndex)
 			{
@@ -33,14 +33,14 @@ namespace Algorithms
 
 		int Remove()
 		{
-			if (_tree.Count() == 1)
+			if (_tree.count() == 1)
 			{
-				return _tree.Remove();
+				return _tree.remove();
 			}
 			else
 			{
-				int first = _tree.First();
-				_tree[0] = _tree.Remove();
+				int first = _tree.first();
+				_tree[0] = _tree.remove();
 
 				Heapify(0);
 
@@ -50,7 +50,7 @@ namespace Algorithms
 	private:
 		void Heapify(int index)
 		{
-			if (index < 0 || index >= _tree.Count())
+			if (index < 0 || index >= _tree.count())
 			{
 				return;
 			}
@@ -58,13 +58,13 @@ namespace Algorithms
 			int smallestIndex = index;
 
 			int leftChildIndex = (index * 2) + 1;
-			if (leftChildIndex < _tree.Count() && _tree[leftChildIndex] < _tree[smallestIndex])
+			if (leftChildIndex < _tree.count() && _tree[leftChildIndex] < _tree[smallestIndex])
 			{
 				smallestIndex = leftChildIndex;
 			}
 
 			int rightChildIndex = leftChildIndex + 1;
-			if (rightChildIndex < _tree.Count() && _tree[rightChildIndex] < _tree[smallestIndex])
+			if (rightChildIndex < _tree.count() && _tree[rightChildIndex] < _tree[smallestIndex])
 			{
 				smallestIndex = rightChildIndex;
 			}
@@ -76,7 +76,7 @@ namespace Algorithms
 			}
 		}
 
-		List<T> _tree;
+		list<T> _tree;
 	};
 }
 

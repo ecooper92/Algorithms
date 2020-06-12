@@ -4,24 +4,24 @@
 namespace Algorithms
 {
 	template <typename T>
-	class List
+	class list
 	{
 	public:
-		List() :
+		list() :
 			_count(0),
 			_dataSize(16),
 			_data(new T[16]) 
 		{
 		}
 
-		explicit List(int reserveSize) :
+		explicit list(int reserveSize) :
 			_count(0),
 			_dataSize(reserveSize),
 			_data(new T[reserveSize]) 
 		{
 		}
 
-		List(T items[], int count) :
+		list(T items[], int count) :
 			_count(count),
 			_dataSize(count),
 			_data(new T[count])
@@ -29,7 +29,7 @@ namespace Algorithms
 			std::copy(items, items + _count, _data);
 		}
 
-		List(std::initializer_list<T> list) :
+		list(std::initializer_list<T> list) :
 			_count(list.size()),
 			_dataSize(list.size()),
 			_data(new T[list.size()])
@@ -37,7 +37,7 @@ namespace Algorithms
 			std::copy(list.begin(), list.end(), _data);
 		}
 
-		List(const List<T>& other) :
+		list(const list<T>& other) :
 			_count(other._count),
 			_dataSize(other._dataSize),
 			_data(new T[other._dataSize])
@@ -45,13 +45,13 @@ namespace Algorithms
 			std::copy(other._data, other._data + other._dataSize, _data);
 		}
 
-		List<T>& operator=(const List<T>& other)
+		list<T>& operator=(const list<T>& other)
 		{
-			List<T>(other).Swap(*this);
+			list<T>(other).swap(*this);
 			return *this;
 		}
 
-		List(List<T>&& other) :
+		list(list<T>&& other) :
 			_count(other._count),
 			_dataSize(other._dataSize),
 			_data(other._data)
@@ -61,13 +61,13 @@ namespace Algorithms
 			other._data = NULL;
 		}
 
-		List<T>& operator=(List<T>&& other)
+		list<T>& operator=(list<T>&& other)
 		{
-			List<T>(std::move(other)).Swap(*this);
+			list<T>(std::move(other)).swap(*this);
 			return *this;
 		}
 
-		~List()
+		~list()
 		{
 			if (_data)
 			{
@@ -84,38 +84,38 @@ namespace Algorithms
 			return _data[index];
 		}
 
-		inline void Add(T item)
+		inline void add(T item)
 		{
 			if (_count >= _dataSize)
 			{
-				this->IncreaseCapacity();
+				this->increase_capacity();
 			}
 
 			_data[_count++] = item;
 		}
 
-		inline T Remove()
+		inline T remove()
 		{
 			return _data[--_count];
 		}
 
-		inline int Count() const
+		inline int count() const
 		{
 			return _count;
 		}
 
-		inline T First() const
+		inline T first() const
 		{
 			return _data[0];
 		}
 
-		inline T Last() const
+		inline T last() const
 		{
 			return _data[_count - 1];
 		}
 
 	private:
-		void IncreaseCapacity()
+		void increase_capacity()
 		{
 			T* newData = new T[_dataSize * 2];
 			std::copy(_data, _data + _dataSize, newData);
@@ -124,7 +124,7 @@ namespace Algorithms
 			_data = newData;
 		}
 
-		void Swap(List& that) noexcept {
+		void swap(list& that) noexcept {
 			std::swap(_count, that._count);
 			std::swap(_dataSize, that._dataSize);
 			std::swap(_data, that._data);

@@ -12,19 +12,19 @@ using namespace Algorithms;
 
 int main()
 {
-    List<int> items = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11, -41, 3, 1, 55, 32, 03 };
-    List<int> sortedItems = items;
+    list<int> items = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11, -41, 3, 1, 55, 32, 03 };
+    list<int> sortedItems = items;
 
-    List<int> bubbleSortItems = items;
+    list<int> bubbleSortItems = items;
     BubbleSort(bubbleSortItems);
 
-    List<int> quickSortItems = items;
+    list<int> quickSortItems = items;
     QuickSort(quickSortItems);
 
-    List<int> mergeSortItems = items;
+    list<int> mergeSortItems = items;
     MergeSort(mergeSortItems);
 
-    List<int> heapSortItems = items;
+    list<int> heapSortItems = items;
     HeapSort(heapSortItems);
 }
 

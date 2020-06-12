@@ -4,13 +4,13 @@
 namespace Algorithms
 {
 	template <typename T>
-	void QuickSort(List<T>& items)
+	void QuickSort(list<T>& items)
 	{
-		QuickSort(items, 0, items.Count() - 1);
+		QuickSort(items, 0, items.count() - 1);
 	}
 
 	template <typename T>
-	void QuickSort(List<T>& items, int startIndex, int endIndex)
+	void QuickSort(list<T>& items, int startIndex, int endIndex)
 	{
 		// Stop of there is one or fewer items between the indices.
 		if (endIndex <= startIndex)
