@@ -16,9 +16,6 @@
     <Filter Include="Source Files\Sort">
       <UniqueIdentifier>{f48deadf-2644-4521-8de1-b13a0a43015f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DataStructures">
-      <UniqueIdentifier>{74ff5627-2c93-4a96-be77-ae4d329b6766}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Sort">
       <UniqueIdentifier>{015d72f6-6cf7-4e0e-9f91-5cfd12a65d14}</UniqueIdentifier>
     </Filter>
@@ -38,9 +35,6 @@
     </ClCompile>
     <ClCompile Include="MergeSort.cpp">
       <Filter>Source Files\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryHeap.cpp">
-      <Filter>Source Files\DataStructures</Filter>
     </ClCompile>
     <ClCompile Include="HeapSort.cpp">
       <Filter>Source Files\Sort</Filter>

@@ -149,7 +149,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Algorithms.cpp" />
-    <ClCompile Include="BinaryHeap.cpp" />
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="HeapSort.cpp" />
     <ClCompile Include="MergeSort.cpp" />
