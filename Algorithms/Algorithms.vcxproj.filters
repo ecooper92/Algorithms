@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Sort">
-      <UniqueIdentifier>{f48deadf-2644-4521-8de1-b13a0a43015f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Sort">
       <UniqueIdentifier>{015d72f6-6cf7-4e0e-9f91-5cfd12a65d14}</UniqueIdentifier>
     </Filter>
@@ -26,18 +23,6 @@
   <ItemGroup>
     <ClCompile Include="Algorithms.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="QuickSort.cpp">
-      <Filter>Source Files\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="BubbleSort.cpp">
-      <Filter>Source Files\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="MergeSort.cpp">
-      <Filter>Source Files\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="HeapSort.cpp">
-      <Filter>Source Files\Sort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

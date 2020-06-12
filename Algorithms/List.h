@@ -47,23 +47,23 @@ namespace Algorithms
 
 		List<T>& operator=(const List<T>& other)
 		{
-			List<T> copy(other);
-			std::swap(*this, copy);
+			List<T>(other).Swap(*this);
 			return *this;
 		}
 
-		List(const List<T>&& other) :
+		List(List<T>&& other) :
 			_count(other._count),
 			_dataSize(other._dataSize),
 			_data(other._data)
 		{
+			other._count = 0;
+			other._dataSize = 0;
 			other._data = NULL;
 		}
 
-		List<T>& operator=(const List<T>&& other)
+		List<T>& operator=(List<T>&& other)
 		{
-			List<T> move(other);
-			std::swap(*this, move);
+			List<T>(std::move(other)).Swap(*this);
 			return *this;
 		}
 
@@ -122,6 +122,12 @@ namespace Algorithms
 			_dataSize = _dataSize * 2;
 			delete[] _data;
 			_data = newData;
+		}
+
+		void Swap(List& that) noexcept {
+			std::swap(_count, that._count);
+			std::swap(_dataSize, that._dataSize);
+			std::swap(_data, that._data);
 		}
 
 		T* _data;

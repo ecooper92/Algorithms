@@ -10,44 +10,22 @@
 
 using namespace Algorithms;
 
-bool CompareArrays(List<int>& arr1, int* arr2, int count)
-{
-    bool match = true;
-
-    for (int i = 0; i < count; i++)
-    {
-        if (arr1[i] != arr2[i])
-        {
-            match = false;
-            break;
-        }
-    }
-
-    return match;
-}
-
 int main()
 {
     List<int> items = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11, -41, 3, 1, 55, 32, 03 };
     List<int> sortedItems = items;
-    //std::sort()
 
-    BubbleSort bs;
     List<int> bubbleSortItems = items;
-    bs.Sort(bubbleSortItems);
-    //bool bubbleSortResult = CompareArrays(bubbleSortItems, sortedItems, count);
+    BubbleSort(bubbleSortItems);
 
-    QuickSort qs;
     List<int> quickSortItems = items;
-    qs.Sort(quickSortItems);
+    QuickSort(quickSortItems);
 
-    MergeSort ms;
     List<int> mergeSortItems = items;
-    ms.Sort(mergeSortItems);
+    MergeSort(mergeSortItems);
 
-    HeapSort hs;
     List<int> heapSortItems = items;
-    hs.Sort(heapSortItems);
+    HeapSort(heapSortItems);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

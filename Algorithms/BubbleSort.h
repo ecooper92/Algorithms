@@ -3,9 +3,18 @@
 
 namespace Algorithms
 {
-	class BubbleSort
+	template <typename T>
+	void BubbleSort(List<T>& items)
 	{
-	public:
-		void Sort(List<int>& items);
-	};
+		for (int i = 0; i < items.Count(); i++)
+		{
+			for (int j = i + 1; j < items.Count(); j++)
+			{
+				if (items[i] > items[j])
+				{
+					std::swap(items[i], items[j]);
+				}
+			}
+		}
+	}
 }
