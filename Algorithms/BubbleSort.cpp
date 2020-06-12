@@ -1,13 +1,13 @@
 #include <algorithm>
 #include "BubbleSort.h"
 
-namespace Algorithms::Sort
+namespace Algorithms
 {
-	void BubbleSort::Sort(std::vector<int>& items)
+	void BubbleSort::Sort(List<int>& items)
 	{
-		for (int i = 0; i < items.size(); i++)
+		for (int i = 0; i < items.Count(); i++)
 		{
-			for (int j = i + 1; j < items.size(); j++)
+			for (int j = i + 1; j < items.Count(); j++)
 			{
 				if (items[i] > items[j])
 				{

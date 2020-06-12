@@ -1,18 +1,12 @@
-#include <algorithm>
 #include "HeapSort.h"
 #include "BinaryHeap.h"
 
-namespace Algorithms::Sort
+namespace Algorithms
 {
-	void HeapSort::Sort(std::vector<int>& items)
+	void HeapSort::Sort(List<int>& items)
 	{
-		Algorithms::DataStructures::BinaryHeap bh;
-		for (auto& item : items)
-		{
-			bh.Insert(item);
-		}
-
-		for (int i = 0; i < items.size(); i++)
+		BinaryHeap bh(items);
+		for (int i = 0; i < items.Count(); i++)
 		{
 			items[i] = bh.Remove();
 		}

@@ -1,14 +1,14 @@
 #include <algorithm>
 #include "MergeSort.h"
 
-namespace Algorithms::Sort
+namespace Algorithms
 {
-	void MergeSort::Sort(std::vector<int>& items)
+	void MergeSort::Sort(List<int>& items)
 	{
-		this->Sort(items, 0, items.size() - 1);
+		this->Sort(items, 0, items.Count() - 1);
 	}
 
-	void MergeSort::Sort(std::vector<int>& items, int startIndex, int endIndex)
+	void MergeSort::Sort(List<int>& items, int startIndex, int endIndex)
 	{
 		// Stop of there is one or fewer items between the indices.
 		if (endIndex <= startIndex)

@@ -1,20 +1,18 @@
 #pragma once
-#include <vector>
-#include <compare>
-#include <algorithm>
-#include <functional>
+#include "List.h"
 
-namespace Algorithms::DataStructures
+namespace Algorithms
 {
 	class BinaryHeap
 	{
 	public:
 		BinaryHeap();
+		BinaryHeap(List<int> list);
 		void Insert(int item);
 		int Remove();
 	private:
 		void Heapify(int index);
-		std::vector<int> _tree;
+		List<int> _tree;
 	};
 }
 

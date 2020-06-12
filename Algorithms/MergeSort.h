@@ -1,13 +1,13 @@
 #pragma once
-#include <vector>
+#include "List.h"
 
-namespace Algorithms::Sort
+namespace Algorithms
 {
 	class MergeSort
 	{
 	public:
-		void Sort(std::vector<int>& items);
+		void Sort(List<int>& items);
 	private:
-		void Sort(std::vector<int>& items, int startIndex, int endIndex);
+		void Sort(List<int>& items, int startIndex, int endIndex);
 	};
 }

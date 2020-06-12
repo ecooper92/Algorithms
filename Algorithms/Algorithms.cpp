@@ -1,32 +1,52 @@
 // Algorithms.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <vector>
 #include <iostream>
 #include "BubbleSort.h"
 #include "QuickSort.h"
 #include "MergeSort.h"
 #include "HeapSort.h"
+#include "List.h"
+
+using namespace Algorithms;
+
+bool CompareArrays(List<int>& arr1, int* arr2, int count)
+{
+    bool match = true;
+
+    for (int i = 0; i < count; i++)
+    {
+        if (arr1[i] != arr2[i])
+        {
+            match = false;
+            break;
+        }
+    }
+
+    return match;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    std::vector<int> sortItems = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11 };
+    List<int> items = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11, -41, 3, 1, 55, 32, 03 };
+    List<int> sortedItems = items;
+    //std::sort()
 
-    Algorithms::Sort::BubbleSort bs;
-    std::vector<int> bubbleSortItems = sortItems;
+    BubbleSort bs;
+    List<int> bubbleSortItems = items;
     bs.Sort(bubbleSortItems);
+    //bool bubbleSortResult = CompareArrays(bubbleSortItems, sortedItems, count);
 
-    Algorithms::Sort::QuickSort qs;
-    std::vector<int> quickSortItems = sortItems;
+    QuickSort qs;
+    List<int> quickSortItems = items;
     qs.Sort(quickSortItems);
 
-    Algorithms::Sort::MergeSort ms;
-    std::vector<int> mergeSortItems = sortItems;
+    MergeSort ms;
+    List<int> mergeSortItems = items;
     ms.Sort(mergeSortItems);
 
-    Algorithms::Sort::HeapSort hs;
-    std::vector<int> heapSortItems = sortItems;
+    HeapSort hs;
+    List<int> heapSortItems = items;
     hs.Sort(heapSortItems);
 }
 

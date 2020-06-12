@@ -1,32 +1,32 @@
 #include <algorithm>
-#include <stdexcept>
 #include "BinaryHeap.h"
 
-namespace Algorithms::DataStructures
+namespace Algorithms
 {
 	BinaryHeap::BinaryHeap()
 	{
 
 	}
 
+	BinaryHeap::BinaryHeap(List<int> list) :
+		_tree(list)
+	{
+		for (int i = _tree.Count() - 1; i >= 0; i--)
+		{
+			Heapify(i);
+		}
+	}
+
 	int BinaryHeap::Remove()
 	{
-		if (_tree.size() == 0)
+		if (_tree.Count() == 1)
 		{
-			throw std::out_of_range("No items to remove.");
-		}
-		else if (_tree.size() == 1)
-		{
-			int last = _tree.back();
-			_tree.pop_back();
-			return last;
+			return _tree.Remove();
 		}
 		else
 		{
-			int first = _tree.front();
-			int last = _tree.back();
-			_tree.pop_back();
-			_tree[0] = last;
+			int first = _tree.First();
+			_tree[0] = _tree.Remove();
 
 			Heapify(0);
 
@@ -36,9 +36,9 @@ namespace Algorithms::DataStructures
 
 	void BinaryHeap::Insert(int item)
 	{
-		_tree.push_back(item);
+		_tree.Add(item);
 
-		int index = _tree.size() - 1;
+		int index = _tree.Count() - 1;
 		int lastIndex = -1;
 		while (index != lastIndex)
 		{
@@ -50,7 +50,7 @@ namespace Algorithms::DataStructures
 
 	void BinaryHeap::Heapify(int index)
 	{
-		if (index < 0 || index >= _tree.size())
+		if (index < 0 || index >= _tree.Count())
 		{
 			return;
 		}
@@ -58,13 +58,13 @@ namespace Algorithms::DataStructures
 		int smallestIndex = index;
 
 		int leftChildIndex = (index * 2) + 1;
-		if (leftChildIndex < _tree.size() && _tree[leftChildIndex] < _tree[smallestIndex])
+		if (leftChildIndex < _tree.Count() && _tree[leftChildIndex] < _tree[smallestIndex])
 		{
 			smallestIndex = leftChildIndex;
 		}
 
 		int rightChildIndex = leftChildIndex + 1;
-		if (rightChildIndex < _tree.size() && _tree[rightChildIndex] < _tree[smallestIndex])
+		if (rightChildIndex < _tree.Count() && _tree[rightChildIndex] < _tree[smallestIndex])
 		{
 			smallestIndex = rightChildIndex;
 		}

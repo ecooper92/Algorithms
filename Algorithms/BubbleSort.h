@@ -1,11 +1,11 @@
 #pragma once
-#include <vector>
+#include "List.h"
 
-namespace Algorithms::Sort
+namespace Algorithms
 {
 	class BubbleSort
 	{
 	public:
-		void Sort(std::vector<int>& items);
+		void Sort(List<int>& items);
 	};
 }
