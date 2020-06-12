@@ -79,12 +79,12 @@ namespace Algorithms
 			_count = 0;
 		}
 
-		T& operator[](int index)
+		inline T& operator[](int index)
 		{
 			return _data[index];
 		}
 
-		void Add(T item)
+		inline void Add(T item)
 		{
 			if (_count >= _dataSize)
 			{
@@ -94,22 +94,22 @@ namespace Algorithms
 			_data[_count++] = item;
 		}
 
-		T Remove()
+		inline T Remove()
 		{
 			return _data[--_count];
 		}
 
-		int Count() const
+		inline int Count() const
 		{
 			return _count;
 		}
 
-		T First() const
+		inline T First() const
 		{
 			return _data[0];
 		}
 
-		T Last() const
+		inline T Last() const
 		{
 			return _data[_count - 1];
 		}
