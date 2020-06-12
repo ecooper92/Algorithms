@@ -4,7 +4,7 @@
 namespace Algorithms
 {
 	template <typename T>
-	void BubbleSort(list<T>& items)
+	void bubble_sort(list<T>& items)
 	{
 		for (int i = 0; i < items.count(); i++)
 		{

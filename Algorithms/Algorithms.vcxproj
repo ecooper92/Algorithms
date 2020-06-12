@@ -152,11 +152,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="binary_heap.h" />
-    <ClInclude Include="BubbleSort.h" />
-    <ClInclude Include="HeapSort.h" />
+    <ClInclude Include="bubble_sort.h" />
+    <ClInclude Include="heap_sort.h" />
     <ClInclude Include="list.h" />
-    <ClInclude Include="MergeSort.h" />
-    <ClInclude Include="QuickSort.h" />
+    <ClInclude Include="merge_sort.h" />
+    <ClInclude Include="quick_sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

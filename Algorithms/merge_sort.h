@@ -4,13 +4,13 @@
 namespace Algorithms
 {
 	template <typename T>
-	void MergeSort(list<T>& items)
+	void merge_sort(list<T>& items)
 	{
-		MergeSort(items, 0, items.count() - 1);
+		merge_sort(items, 0, items.count() - 1);
 	}
 
 	template <typename T>
-	void MergeSort(list<T>& items, int startIndex, int endIndex)
+	void merge_sort(list<T>& items, int startIndex, int endIndex)
 	{
 		// Stop of there is one or fewer items between the indices.
 		if (endIndex <= startIndex)
@@ -20,8 +20,8 @@ namespace Algorithms
 
 		// Split the items into two equally sized parts and sort those parts.
 		int center = ((startIndex + endIndex) / 2) + 1;
-		MergeSort(items, startIndex, center - 1);
-		MergeSort(items, center, endIndex);
+		merge_sort(items, startIndex, center - 1);
+		merge_sort(items, center, endIndex);
 
 		// Merge the resultant parts back together
 		int leftIndex = startIndex;

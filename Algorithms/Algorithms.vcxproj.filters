@@ -26,23 +26,23 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BubbleSort.h">
-      <Filter>Header Files\Sort</Filter>
-    </ClInclude>
-    <ClInclude Include="MergeSort.h">
-      <Filter>Header Files\Sort</Filter>
-    </ClInclude>
-    <ClInclude Include="QuickSort.h">
-      <Filter>Header Files\Sort</Filter>
-    </ClInclude>
-    <ClInclude Include="HeapSort.h">
-      <Filter>Header Files\Sort</Filter>
-    </ClInclude>
     <ClInclude Include="list.h">
       <Filter>Header Files\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="binary_heap.h">
       <Filter>Header Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="bubble_sort.h">
+      <Filter>Header Files\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="heap_sort.h">
+      <Filter>Header Files\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_sort.h">
+      <Filter>Header Files\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="quick_sort.h">
+      <Filter>Header Files\Sort</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

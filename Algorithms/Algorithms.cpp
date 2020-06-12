@@ -2,10 +2,10 @@
 //
 
 #include <iostream>
-#include "BubbleSort.h"
-#include "QuickSort.h"
-#include "MergeSort.h"
-#include "HeapSort.h"
+#include "bubble_sort.h"
+#include "quick_sort.h"
+#include "merge_sort.h"
+#include "heap_sort.h"
 #include "list.h"
 
 using namespace Algorithms;
@@ -16,16 +16,16 @@ int main()
     list<int> sortedItems = items;
 
     list<int> bubbleSortItems = items;
-    BubbleSort(bubbleSortItems);
+    bubble_sort(bubbleSortItems);
 
     list<int> quickSortItems = items;
-    QuickSort(quickSortItems);
+    quick_sort(quickSortItems);
 
     list<int> mergeSortItems = items;
-    MergeSort(mergeSortItems);
+    merge_sort(mergeSortItems);
 
     list<int> heapSortItems = items;
-    HeapSort(heapSortItems);
+    heap_sort(heapSortItems);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

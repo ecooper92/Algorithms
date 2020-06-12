@@ -5,7 +5,7 @@
 namespace Algorithms
 {
 	template <typename T>
-	void HeapSort(list<T>& items)
+	void heap_sort(list<T>& items)
 	{
 		binary_heap bh(items);
 		for (int i = 0; i < items.count(); i++)

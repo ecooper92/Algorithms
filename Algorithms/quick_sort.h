@@ -4,13 +4,13 @@
 namespace Algorithms
 {
 	template <typename T>
-	void QuickSort(list<T>& items)
+	void quick_sort(list<T>& items)
 	{
-		QuickSort(items, 0, items.count() - 1);
+		quick_sort(items, 0, items.count() - 1);
 	}
 
 	template <typename T>
-	void QuickSort(list<T>& items, int startIndex, int endIndex)
+	void quick_sort(list<T>& items, int startIndex, int endIndex)
 	{
 		// Stop of there is one or fewer items between the indices.
 		if (endIndex <= startIndex)
@@ -33,7 +33,7 @@ namespace Algorithms
 		std::swap(pivot, items[pivotIndex - 1]);
 
 		// Sort recusively sort both halves.
-		QuickSort(items, startIndex, pivotIndex - 1);
-		QuickSort(items, pivotIndex, endIndex);
+		quick_sort(items, startIndex, pivotIndex - 1);
+		quick_sort(items, pivotIndex, endIndex);
 	}
 }
