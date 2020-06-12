@@ -21,7 +21,7 @@ namespace algorithms
 		{
 			_tree.add(item);
 
-			int index = _tree.Count() - 1;
+			int index = _tree.count() - 1;
 			int lastIndex = -1;
 			while (index != lastIndex)
 			{

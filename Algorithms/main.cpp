@@ -10,6 +10,16 @@
 
 using namespace algorithms;
 
+void print_list(list<int>& list)
+{
+    std::cout << "[ ";
+    for (int i = 0; i < list.count(); i++)
+    {
+        std::cout << list[i] << " ";
+    }
+    std::cout << "] " << std::endl;
+}
+
 int main()
 {
     list<int> items = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11, -41, 3, 1, 55, 32, 03 };
@@ -17,15 +27,19 @@ int main()
 
     list<int> bubbleSortItems = items;
     bubble_sort(bubbleSortItems);
+    print_list(bubbleSortItems);
 
     list<int> quickSortItems = items;
     quick_sort(quickSortItems);
+    print_list(quickSortItems);
 
     list<int> mergeSortItems = items;
     merge_sort(mergeSortItems);
+    print_list(mergeSortItems);
 
     list<int> heapSortItems = items;
     heap_sort(heapSortItems);
+    print_list(heapSortItems);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
