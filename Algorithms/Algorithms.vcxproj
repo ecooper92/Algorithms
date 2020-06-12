@@ -153,6 +153,7 @@
     <ClInclude Include="heap_sort.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="merge_sort.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="quick_sort.h" />
     <ClInclude Include="stack.h" />
   </ItemGroup>
