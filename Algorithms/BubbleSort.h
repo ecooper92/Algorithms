@@ -1,14 +1,14 @@
 #pragma once
-#include "List.h"
+#include "list.h"
 
 namespace Algorithms
 {
 	template <typename T>
 	void BubbleSort(list<T>& items)
 	{
-		for (int i = 0; i < items.count(); i++)
+		for (int i = 0; i < items.Count(); i++)
 		{
-			for (int j = i + 1; j < items.count(); j++)
+			for (int j = i + 1; j < items.Count(); j++)
 			{
 				if (items[i] > items[j])
 				{

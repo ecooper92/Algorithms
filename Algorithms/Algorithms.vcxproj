@@ -154,7 +154,7 @@
     <ClInclude Include="BinaryHeap.h" />
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="HeapSort.h" />
-    <ClInclude Include="List.h" />
+    <ClInclude Include="list.h" />
     <ClInclude Include="MergeSort.h" />
     <ClInclude Include="QuickSort.h" />
   </ItemGroup>

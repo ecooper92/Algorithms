@@ -41,7 +41,7 @@
     <ClInclude Include="HeapSort.h">
       <Filter>Header Files\Sort</Filter>
     </ClInclude>
-    <ClInclude Include="List.h">
+    <ClInclude Include="list.h">
       <Filter>Header Files\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>

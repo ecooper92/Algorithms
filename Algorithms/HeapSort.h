@@ -1,5 +1,5 @@
 #pragma once
-#include "List.h"
+#include "list.h"
 #include "BinaryHeap.h"
 
 namespace Algorithms
@@ -8,7 +8,7 @@ namespace Algorithms
 	void HeapSort(list<T>& items)
 	{
 		BinaryHeap bh(items);
-		for (int i = 0; i < items.count(); i++)
+		for (int i = 0; i < items.Count(); i++)
 		{
 			items[i] = bh.Remove();
 		}

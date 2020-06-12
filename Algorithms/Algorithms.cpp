@@ -6,7 +6,7 @@
 #include "QuickSort.h"
 #include "MergeSort.h"
 #include "HeapSort.h"
-#include "List.h"
+#include "list.h"
 
 using namespace Algorithms;
 
