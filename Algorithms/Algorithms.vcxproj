@@ -150,7 +150,9 @@
   <ItemGroup>
     <ClInclude Include="binary_heap.h" />
     <ClInclude Include="bubble_sort.h" />
+    <ClInclude Include="graph.h" />
     <ClInclude Include="heap_sort.h" />
+    <ClInclude Include="linked_list.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="merge_sort.h" />
     <ClInclude Include="queue.h" />

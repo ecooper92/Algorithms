@@ -7,6 +7,7 @@
 #include "merge_sort.h"
 #include "heap_sort.h"
 #include "list.h"
+#include "linked_list.h"
 
 using namespace algorithms;
 
@@ -22,6 +23,11 @@ void print_list(list<int>& list)
 
 int main()
 {
+    linked_list<int> ll;
+    ll.push_back(1);
+    ll.push_back(2);
+    ll.push_back(3);
+
     list<int> items = { 3, 6, 1, 22, 5, 4, 5, 0, -44, 100, 2, -1, 0, 5, 11, -41, 3, 1, 55, 32, 03 };
     list<int> sortedItems = items;
 
