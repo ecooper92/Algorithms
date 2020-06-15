@@ -34,15 +34,40 @@ namespace algorithms
 			return _data.last();
 		}*/
 
+		inline int size()
+		{
+			if (!_first)
+			{
+				return 0;
+			}
+
+			int count = 0;
+			std::shared_ptr<node>& next_node = _first;
+			do
+			{
+				count++;
+				next_node = next_node->next;
+			} while (next_node != _first);
+
+			return count;
+		}
+
+		inline bool empty()
+		{
+			return !_first;
+		}
+
 		inline void push_back(const T& value)
 		{
 			if (_last)
 			{
 				// Point the last pointer to the new node.
-				_last->next = std::make_shared<node>();
-				_last->next->value = value;
-				_last->next->previous = _last;
-				_last = _last->next;
+				std::shared_ptr<node> previous = _last;
+				_last = std::make_shared<node>();
+				_last->value = value;
+				_last->previous = previous;
+				_last->next = _first;
+				previous->next = _last;
 			}
 			else
 			{
