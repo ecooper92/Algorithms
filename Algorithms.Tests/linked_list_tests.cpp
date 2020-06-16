@@ -16,6 +16,6 @@ namespace algorithms
         ll.push_back(3);
         ll.push_back(2);
         EXPECT_FALSE(ll.empty());
-        EXPECT_EQ(ll.size(), 10);
+        EXPECT_EQ(ll.size(), 9);
     }
 }
